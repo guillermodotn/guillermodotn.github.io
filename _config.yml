@@ -14,9 +14,9 @@ timezone: Europe/Madrid
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: mysite # the main title
+title: Guillermo's Blog # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: 'Exploring Ideas, Sharing Stories: Narratives of Discovery' # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Guillermo N. Leiro Arroyo personal website.
