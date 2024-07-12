@@ -36,5 +36,12 @@ I'm a Master's student specializing in:
 - Prompt Engineering
 - Django Framework
 
-Feel free to explore my repositories and get in touch if you share similar interests or have exciting projects to discuss!
+### Contact Information 
+- **Matix** [@guillermo.n:tchncs.de](https://matrix.to/#/@guillermo.n:tchncs.de)
+- **Email** [guillerm0.n@outlook.es](mailto:guillerm0.n@outlook.es) 
 
+    **GPG  🔑** [`F212 61D5 7B6E 01BC E369 77DE D5E2 2C45 AF3E 3A75` ](https://keys.openpgp.org/vks/v1/by-fingerprint/F21261D57B6E01BCE36977DED5E22C45AF3E3A75)
+
+    Encrypted messages preferred, please send encrypted messages whenever possible.
+
+Feel free to explore my repositories and get in touch if you share similar interests or have exciting projects to discuss!
