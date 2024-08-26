@@ -33,13 +33,13 @@ A good trick is to list the network interfaces with the Ethernet cable disconnec
 
 ### On Windows
 
-```psh
+```powershell
 >  netsh interface show interface
 ```
 
 This will show an output similar to:
 
-```psh
+```powershell
 Admin State    State          Type             Interface Name
 -------------------------------------------------------------------------
 Enabled        Connected      Dedicated        WiFi
@@ -92,7 +92,7 @@ For that, we will need two pieces of information:
 
 ## Windows
 
-```psh
+```powershell
 > pppoe-retriever-windows-latest.exe -i <interface> -l <vland_id>
 ```
 
