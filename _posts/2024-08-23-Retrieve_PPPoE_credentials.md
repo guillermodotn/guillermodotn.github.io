@@ -33,18 +33,20 @@ A good trick is to list the network interfaces with the Ethernet cable disconnec
 
 ### On Windows
 
-```powershell
+```shell
 >  netsh interface show interface
 ```
+{: .nolineno }
 
 This will show an output similar to:
 
-```powershell
+```shell
 Admin State    State          Type             Interface Name
 -------------------------------------------------------------------------
 Enabled        Connected      Dedicated        WiFi
 Enabled        Disconnected   Dedicated        Ethernet
 ```
+{: .nolineno }
 
 We need to check for the change in the `State`column and remember the `Interface Name`.
 
@@ -53,6 +55,7 @@ We need to check for the change in the `State`column and remember the `Interface
 ```bash
 $ ipconfig
 ```
+{: .nolineno }
 
 
 ### On Linux
@@ -62,7 +65,7 @@ Here, you can use the same command as on a Mac, or the more recommended one.
 ```bash
 $ ip link show
 ```
-
+{: .nolineno }
 
 
 ## 2. Connect the router to our PC
@@ -92,9 +95,10 @@ For that, we will need two pieces of information:
 
 ## Windows
 
-```powershell
+```shell
 > pppoe-retriever-windows-latest.exe -i <interface> -l <vland_id>
 ```
+{: .nolineno }
 
 ## UNIX
 
@@ -102,6 +106,7 @@ For that, we will need two pieces of information:
 $ chmod +x pppoe-retriever-unix-latest
 $ sudo ./pppoe-retriever-unix-latest -i <interface> -l <vland_id>
 ```
+{: .nolineno }
 
 > On unix sistems the program should be run with `root` privileges.
 {: .prompt-info }
