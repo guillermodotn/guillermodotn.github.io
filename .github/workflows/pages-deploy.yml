@@ -51,8 +51,8 @@ jobs:
           JEKYLL_ENV: "production"
 
       - name: Print chirpy theme version
-        run: gem list jekyll-theme-chirpy
-        
+        run: bundle list | grep chirpy
+
       - name: Test site
         run: |
           bundle exec htmlproofer _site \
