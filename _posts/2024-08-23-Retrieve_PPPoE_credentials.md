@@ -12,7 +12,7 @@ So, you decide to get a new router and replace the one provided by the ISP. This
 > In case you're hesitant about the legality of this, I'd like to mention that it is **legal**. At least in Europe, you have the right to access the internet with the devices of your choice, as specified in EU’s [Regulation (EU) 2015/2120](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R2120). Companies often try to obfuscate and make you jump through hoops for these credentials because operating their lockdown routers allows them to control settings, such as DNS, to more cost-effectively manage their network.
 {: .prompt-info }
 
-# What do I need?
+## What do I need?
 
 For this to work, you will need the router that contains the PPPoE credentials, a computer with an Ethernet interface, and an Ethernet cable.
 
@@ -21,17 +21,17 @@ Because you most likely won't have internet access during the process, it’s co
 > The program is packaged as a frozen binary, which is a Python script bundled with all its dependencies and interpreter into a single binary/executable. This makes it easy to use, as you won’t need to install anything on your system. Just download it, run it once, and then you can easily remove it.
 {: .prompt-info }
 
-# Before running the script
+## Before running the script
 
 Before running our script, we need to do two things.
 
-## 1. Find interface name
+### 1. Find interface name
 
 The first step is to identify the name of the Ethernet port interface on our computer. This can be tricky if we have more than one Ethernet port.
 
 A good trick is to list the network interfaces with the Ethernet cable disconnected, then connect the cable and list them again. This will help you identify which interface corresponds to which port.
 
-### On Windows
+#### On Windows
 
 ```shell
 >  netsh interface show interface
@@ -50,7 +50,7 @@ Enabled        Disconnected   Dedicated        Ethernet
 
 We need to check for the change in the `State`column and remember the `Interface Name`.
 
-### On Mac
+#### On Mac
 
 ```bash
 $ ipconfig
@@ -58,7 +58,7 @@ $ ipconfig
 {: .nolineno }
 
 
-### On Linux
+#### On Linux
 
 Here, you can use the same command as on a Mac, or the more recommended one.
 
@@ -68,7 +68,7 @@ $ ip link show
 {: .nolineno }
 
 
-## 2. Connect the router to our PC
+### 2. Connect the router to our PC
 
 Now that we have identified the port, we need to connect our router with the PPPoE credentials to it. This connection will be done in a specific way: the cable should go from the WAN (Wide Area Network) port on our router to the PC.
 
@@ -78,7 +78,7 @@ The WAN port on our router is the one that communicates with the exterior of our
 _Router Port Configuration_
 
 
-# Let's run the script
+## Let's run the script
 
 Finally, all that's left to do is run our script/program to collect the credentials.
 
@@ -93,14 +93,14 @@ For that, we will need two pieces of information:
 > To find out your ISP's VLAN in Spain, you can refer to [FTTH_Spain](https://wiki.bandaancha.st/Identificadores_VLAN_operadores_FTTH?ref=florianjensen.com).
 {: .prompt-tip }
 
-## Windows
+### Windows
 
 ```shell
 > pppoe-retriever-windows-latest.exe -i <interface> -l <vland_id>
 ```
 {: .nolineno }
 
-## UNIX
+### UNIX
 
 ```bash
 $ chmod +x pppoe-retriever-unix-latest
