@@ -117,11 +117,11 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping: # optional, default to 'pathname'
+    repo: guillermodotn/guillermodotn.github.io
+    repo_id: R_kgDOMUcI-A
+    category: Comments
+    category_id: DIC_kwDOMUcI-M4CiIRM
+    mapping: title # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
