@@ -21,7 +21,7 @@ For this to work, you will need the router that contains the PPPoE credentials, 
 
 Because you most likely won't have internet access during the process, it’s convenient to download the required program beforehand. It can be found [here](https://github.com/guillermodotn/pppoe-retriever/releases/latest) for Linux, Windows, and Mac.
 
-__GitHub repo:__ https://github.com/guillermodotn/pppoe-retriever
+__GitHub repo: [https://github.com/guillermodotn/pppoe-retriever](https://github.com/guillermodotn/pppoe-retriever)__
 
 > The program is packaged as a frozen binary, which is a Python script bundled with all its dependencies and interpreter into a single binary/executable. This makes it easy to use, as you won’t need to install anything on your system. Just download it, run it once, and then you can easily remove it.
 {: .prompt-info }
