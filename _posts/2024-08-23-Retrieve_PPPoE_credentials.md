@@ -16,6 +16,9 @@ So, you decide to get a new router and replace the one provided by the ISP. This
 
 For this to work, you will need the router that contains the PPPoE credentials, a computer with an Ethernet interface, and an Ethernet cable.
 
+> The router must be an Ethernet WAN router, meaning it should have an Ethernet port for the WAN (Wide Area Network).
+{: .prompt-info }
+
 Because you most likely won't have internet access during the process, it’s convenient to download the required program beforehand. It can be found [here](https://github.com/guillermodotn/pppoe-retriever/releases/latest) for Linux, Windows, and Mac.
 
 > The program is packaged as a frozen binary, which is a Python script bundled with all its dependencies and interpreter into a single binary/executable. This makes it easy to use, as you won’t need to install anything on your system. Just download it, run it once, and then you can easily remove it.
@@ -87,24 +90,46 @@ For that, we will need two pieces of information:
 - [X] Network interface name
 - [ ] VLAN ID
 
-> Ethernet VLANs (Virtual Local Area Networks) are used to segment and manage network traffic efficiently within a larger network. By creating separate VLANs, ISPs can isolate their network from other providers as well as segment different types of traffic, such as data, voice, and TV, along with managing their priorities.
+> Ethernet VLANs (Virtual Local Area Networks) are used to segment and manage network traffic efficiently within a larger network. By creating separate VLANs, ISPs can isolate their network from other providers as well as segment different types of traffic, such as data, voice, and TV, along with managing their priorities. A VLAN is identified by a 12-bit number that ranges from 1 to 4095.
 {: .prompt-info }
 
 > To find out your ISP's VLAN in Spain, you can refer to [FTTH_Spain](https://wiki.bandaancha.st/Identificadores_VLAN_operadores_FTTH?ref=florianjensen.com).
 {: .prompt-tip }
 
+If you can't find your VLAN, you can use the -r option in the script with the number of VLANs to try. This will attempt all VLANs between 1 and the number passed as an argument.
+
+
 ### Windows
+
+#### Known VLAN
 
 ```shell
 > pppoe-retriever-windows-latest.exe -i <interface> -l <vland_id>
 ```
 {: .nolineno }
 
+#### Unknown VLAN
+
+```shell
+> pppoe-retriever-windows-latest.exe -i <interface> -r <range>
+```
+{: .nolineno }
+
 ### UNIX
+
+#### Known VLAN
 
 ```bash
 $ chmod +x pppoe-retriever-unix-latest
 $ sudo ./pppoe-retriever-unix-latest -i <interface> -l <vland_id>
+```
+{: .nolineno }
+
+#### Unknown VLAN
+
+```bash
+$ chmod +x pppoe-retriever-unix-latest
+$ sudo ./pppoe-retriever-unix-latest -i <interface> -r <range>
 ```
 {: .nolineno }
 
