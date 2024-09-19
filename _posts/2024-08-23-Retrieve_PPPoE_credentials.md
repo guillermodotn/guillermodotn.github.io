@@ -68,9 +68,18 @@ $ ipconfig
 Here, you can use the same command as on a Mac, or the more recommended one.
 
 ```bash
-$ ip link show
+$ nmcli device status
 ```
 {: .nolineno }
+
+This command will show an output as follows:
+
+```bash
+DEVICE  TYPE      STATE        CONNECTION 
+wlp2s0  wifi      connected    some-network5G
+eth0    ethernet  unavaliable  --
+lo      loopback  unmanaged    --
+```
 
 
 ### 2. Connect the router to our PC
