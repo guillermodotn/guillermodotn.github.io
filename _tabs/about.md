@@ -28,10 +28,10 @@ I'm a Master's student specializing in:
 
 ### Current Focus
 🌱 I’m currently sharpening my skills in:
-- SAP
-- Azure
-- PostgreSQL
 - Python
+- SQL
+- Marimo
+- DuckDB
 - Docker
 - Prompt Engineering
 - Django Framework
