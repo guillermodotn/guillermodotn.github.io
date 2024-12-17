@@ -1,6 +1,6 @@
 ---
 title: Where to manually install your programs on Linux.
-date: 2024-12-18 11:00:00 +0100
+date: 2024-12-18 09:00:00 +0100
 categories: [Post, Linux]
 tags: [linux, file-system, sys-admin]     # TAG names should always be lowercase
 ---
