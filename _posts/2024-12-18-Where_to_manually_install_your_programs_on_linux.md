@@ -63,11 +63,6 @@ Here's a breakdown of the directories where binaries and applications can be ins
 - **Who Uses It**: These directories contain programs for the **root user** or system administrators.
 - **Best Practice**: Do not place manual binaries here. Use `/usr/local/bin` instead.
 
-Example binaries:
-
-    /sbin/fsck (file system check)
-    /usr/sbin/nginx (web server)
-
 > **Example binaries**:
 > - `/sbin/fsck` (file system check)
 > - `/sbin/lvm` (logical volume manager)
