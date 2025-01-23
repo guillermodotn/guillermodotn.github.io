@@ -1,0 +1,8 @@
+version: 2
+updates:
+  - package-ecosystem: "bundler" # Ruby gems Jekyll theme package manager
+    directory: "/" # Gemfile location
+    schedule:
+      interval: "daily" # Check frequency
+    ignore:
+      - dependency-name: "jekyll" # Optional: Avoid unrelated Jekyll updates
