@@ -1,8 +1,13 @@
 name: Check Spelling
 on:
-  push:  # Trigger on any push to any branch
-  pull_request:  # Trigger on any pull request to any branch
-
+  push:
+    branches:
+      - main
+      - master
+    paths-ignore:
+      - .gitignore
+      - README.md
+      - LICENSE
 jobs:
   spelling:
     runs-on: ubuntu-latest
