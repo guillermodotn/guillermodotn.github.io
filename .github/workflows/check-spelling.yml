@@ -1,0 +1,12 @@
+name: Check Spelling
+on:
+  push:  # Trigger on any push to any branch
+  pull_request:  # Trigger on any pull request to any branch
+
+jobs:
+  spelling:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Check Spelling
+      uses: rojopolis/spellcheck-github-actions@v0.46.0
