@@ -9,7 +9,7 @@ This post is a tutorial on how to retrieve the credentials from ISP (Internet Se
 
 So, you decide to get a new router and replace the one provided by the ISP. This is where the big problem arises, as some ISPs will not provide you with the PPPoE credentials that your router uses to access their network. In this tutorial, we'll show you how to retrieve the credentials from an ISP router so that you can replace it with your own.
 
-> In case you're hesitant about the legality of this, I'd like to mention that it is **legal**. At least in Europe, you have the right to access the internet with the devices of your choice, as specified in EU’s [Regulation (EU) 2015/2120](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R2120). Companies often try to obfuscate and make you jump through hoops for these credentials because operating their lockdown routers allows them to control settings, such as DNS, to more cost-effectively manage their network.
+> In case you're hesitant about the legality of this, I'd like to mention that it is **legal**. At least in Europe, you have the right to access the internet with the devices of your choice, as specified in EU's [Regulation (EU) 2015/2120](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32015R2120). Companies often try to obfuscate and make you jump through hoops for these credentials because operating their lockdown routers allows them to control settings, such as DNS, to more cost-effectively manage their network.
 {: .prompt-info }
 
 ## What do I need?
@@ -144,7 +144,7 @@ $ sudo ./pppoe-retriever-unix-latest -i <interface> -r <range>
 ```
 {: .nolineno }
 
-> On unix sistems the program should be run with `root` privileges.
+> On unix systems the program should be run with `root` privileges.
 {: .prompt-info }
 
 

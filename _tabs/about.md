@@ -15,7 +15,7 @@ order: 4
 - **Cryptography**
 
 ### Professional Journey
-I'm currently working as a Prompt Engineer with the [Python](https://www.python.org/), [Django framework](https://www.djangoproject.com/) and [OpenAI](https://openai.com/api/) API's at [Altim](https://www.altim.es/). My work involves creating advanced solutions to drive efficiency and innovation.
+I'm currently working as a Prompt Engineer with the [Python](https://www.python.org/), [Django framework](https://www.djangoproject.com/) and [OpenAI](https://openai.com/api/) APIs at [Altim](https://www.altim.es/). My work involves creating advanced solutions to drive efficiency and innovation.
 
 ### Academic Pursuits
 I'm a Master's student specializing in:
@@ -37,7 +37,7 @@ I'm a Master's student specializing in:
 - Django Framework
 
 ### Contact Information 
-- **Matix** [@guillermo.n:tchncs.de](https://matrix.to/#/@guillermo.n:tchncs.de)
+- **Matrix** [@guillermo.n:tchncs.de](https://matrix.to/#/@guillermo.n:tchncs.de)
 - **Email** [guillerm0.n@outlook.es](mailto:guillerm0.n@outlook.es) 
 
     **GPG  🔑** [`F212 61D5 7B6E 01BC E369 77DE D5E2 2C45 AF3E 3A75` ](https://keys.openpgp.org/vks/v1/by-fingerprint/F21261D57B6E01BCE36977DED5E22C45AF3E3A75)

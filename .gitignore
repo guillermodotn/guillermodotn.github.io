@@ -24,3 +24,14 @@ package-lock.json
 # Misc
 _sass/dist
 assets/js/dist
+
+# PySpelling-related temporary files
+*.dic
+*.aff
+*.xml
+
+# PySpelling cache and configuration
+.pyspelling/
+
+# Obsidian Markdown notes
+**/.obsidian

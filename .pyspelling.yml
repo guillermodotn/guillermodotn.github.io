@@ -5,7 +5,9 @@ matrix:
     d: en_US
   dictionary:
     wordlists:
-    - en-custom-dictionary.txt
+    - dictionaries/jekyll-chirpy-dictionary.txt
+    - dictionaries/en-custom-dictionary.txt
+    - dictionaries/about-page-dictionary.txt
     encoding: utf-8
   pipeline:
   - pyspelling.filters.markdown:
