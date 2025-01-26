@@ -5,7 +5,9 @@ unix
 pppoe
 exe
 VLANs
+VLAN
 FTTH
+ISP
 ISP's
 PPPoE
 https
@@ -20,3 +22,6 @@ usr
 API's
 Altim
 OpenAI
+DuckDB
+Marimo
+nolineno
