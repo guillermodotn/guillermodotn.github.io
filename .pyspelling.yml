@@ -8,8 +8,7 @@ matrix:
   - pyspelling.filters.html:
     comments: false
     ignores:
-    - code
-    - pre
+    - :matches(code, pre)
   sources:
   - '**/*.md'
   default_encoding: utf-8
