@@ -1,0 +1,41 @@
+# Disable rules that don't fit blogging style or are too restrictive
+MD013: false # Line length
+MD033: false  # Allow inline HTML (useful for custom embeds or styling)
+MD041: false  # Allow missing H1 at the start (useful for partials or sections)
+
+# Customize rule behavior for specific scenarios
+MD007:  # List indentation
+  indent: 2  # Require 2 spaces for nested lists
+MD004:  # Consistent unordered list style
+  style: "-"  # Enforce dashes for unordered lists
+MD005: true  # Enforce indentation consistency in lists
+MD029: true  # Enforce ordered list item prefix
+
+# Enable rules to enforce consistent formatting
+MD002: true  # H1 should be the first heading
+MD003:  # Heading style
+  style: "atx"  # Use # for headings instead of underlined style
+MD010: true  # No hard tabs
+MD022: true  # Headers should be surrounded by blank lines
+MD031: true  # Code blocks should be surrounded by blank lines
+MD040: true  # Fenced code blocks should have a language specified
+MD046: true  # Code block style consistency
+
+# Rules to ensure accessibility and good practices
+MD012: true  # Prevent multiple consecutive blank lines
+MD026:  # Trailing punctuation in headings
+  punctuation: ".,;:"  # Disallow periods, commas, semicolons, or colons
+MD034: true  # Avoid bare URLs (use <URL> or proper link syntax)
+
+# Rules to encourage clarity in writing
+MD024: true  # No duplicate headings
+MD036: true  # No emphasis used for headings
+
+# Exclude certain files or directories
+files:
+  exclude:
+    - node_modules/**
+    - _site/**
+    - .git/**
+    - .github/** 
+    - dictionaries/**

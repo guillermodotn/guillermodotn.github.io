@@ -21,7 +21,7 @@ For this to work, you will need the router that contains the PPPoE credentials, 
 
 Because you most likely won't have internet access during the process, it’s convenient to download the required program beforehand. It can be found [here](https://github.com/guillermodotn/pppoe-retriever/releases/latest) for Linux, Windows, and Mac.
 
-__GitHub repo: [https://github.com/guillermodotn/pppoe-retriever](https://github.com/guillermodotn/pppoe-retriever)__
+**GitHub repo: [https://github.com/guillermodotn/pppoe-retriever](https://github.com/guillermodotn/pppoe-retriever)**
 
 > The program is packaged as a frozen binary, which is a Python script bundled with all its dependencies and interpreter into a single binary/executable. This makes it easy to use, as you won’t need to install anything on your system. Just download it, run it once, and then you can easily remove it.
 {: .prompt-info }
@@ -41,6 +41,7 @@ A good trick is to list the network interfaces with the Ethernet cable disconnec
 ```shell
 >  netsh interface show interface
 ```
+
 {: .nolineno }
 
 This will show an output similar to:
@@ -51,6 +52,7 @@ Admin State    State          Type             Interface Name
 Enabled        Connected      Dedicated        WiFi
 Enabled        Disconnected   Dedicated        Ethernet
 ```
+
 {: .nolineno }
 
 We need to check for the change in the `State`column and remember the `Interface Name`.
@@ -58,18 +60,19 @@ We need to check for the change in the `State`column and remember the `Interface
 #### On Mac
 
 ```bash
-$ ipconfig
+ipconfig
 ```
-{: .nolineno }
 
+{: .nolineno }
 
 #### On Linux
 
 Here, you can use the same command as on a Mac, or the more recommended one.
 
 ```bash
-$ nmcli device status
+nmcli device status
 ```
+
 {: .nolineno }
 
 This command will show an output as follows:
@@ -81,7 +84,6 @@ eth0    ethernet  unavaliable  --
 lo      loopback  unmanaged    --
 ```
 
-
 ### 2. Connect the router to our PC
 
 Now that we have identified the port, we need to connect our router with the PPPoE credentials to it. This connection will be done in a specific way: the cable should go from the WAN (Wide Area Network) port on our router to the PC.
@@ -90,7 +92,6 @@ The WAN port on our router is the one that communicates with the exterior of our
 
 ![img-description](../assets/img/posts/retrieve-pppoe-credentials/router-hl.jpg)
 _Router Port Configuration_
-
 
 ## Let's run the script
 
@@ -102,55 +103,55 @@ For that, we will need two pieces of information:
 - [ ] VLAN ID
 
 > Ethernet VLANs (Virtual Local Area Networks) are used to segment and manage network traffic efficiently within a larger network. By creating separate VLANs, ISPs can isolate their network from other providers as well as segment different types of traffic, such as data, voice, and TV, along with managing their priorities. A VLAN is identified by a 12-bit number that ranges from 1 to 4095.
-{: .prompt-info }
 
+{: .prompt-info }
 > To find out your ISP's VLAN in Spain, you can refer to [FTTH_Spain](https://wiki.bandaancha.st/Identificadores_VLAN_operadores_FTTH?ref=florianjensen.com).
 {: .prompt-tip }
 
 If you can't find your VLAN, you can use the -r option in the script with the number of VLANs to try. This will attempt all VLANs between 1 and the number passed as an argument.
 
-
 ### Windows
 
-#### Known VLAN
+#### Known VLAN (Windows)
 
 ```shell
 > pppoe-retriever-windows-latest.exe -i <interface> -l <vland_id>
 ```
+
 {: .nolineno }
 
-#### Unknown VLAN
+#### Unknown VLAN (Windows)
 
 ```shell
 > pppoe-retriever-windows-latest.exe -i <interface> -r <range>
 ```
+
 {: .nolineno }
 
 ### UNIX
 
-#### Known VLAN
+#### Known VLAN (UNIX)
 
 ```bash
-$ chmod +x pppoe-retriever-unix-latest
-$ sudo ./pppoe-retriever-unix-latest -i <interface> -l <vland_id>
+chmod +x pppoe-retriever-unix-latest
+sudo ./pppoe-retriever-unix-latest -i <interface> -l <vland_id>
 ```
+
 {: .nolineno }
 
-#### Unknown VLAN
+#### Unknown VLAN (UNIX)
 
 ```bash
-$ chmod +x pppoe-retriever-unix-latest
-$ sudo ./pppoe-retriever-unix-latest -i <interface> -r <range>
+chmod +x pppoe-retriever-unix-latest
+sudo ./pppoe-retriever-unix-latest -i <interface> -r <range>
 ```
+
 {: .nolineno }
 
 > On unix systems the program should be run with `root` privileges.
 {: .prompt-info }
 
-
 Finally, let it work its magic.
-
-
 
 > If you stumble upon this post before getting a new router, I suggest checking out [GL-iNet](https://www.gl-inet.com/) hardware, These routers offer great value, in my opinion, and come with their own version of [OpenWRT](https://openwrt.org/) pre-installed. You also have the option to install the vanilla version with full compatibility.
 {: .prompt-tip }

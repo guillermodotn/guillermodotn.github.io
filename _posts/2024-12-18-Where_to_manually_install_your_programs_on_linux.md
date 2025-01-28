@@ -46,6 +46,7 @@ Here's a breakdown of the directories where binaries and applications can be ins
   - Managed by the package manager (e.g., `dnf`, `apt`) and should **not** be used for manual installations.
 
 > **Example binaries**:
+>
 > - `/bin/ls` (list directory contents)
 > - `/usr/bin/vim` (text editor)
 {: .prompt-info }
@@ -63,6 +64,7 @@ Here's a breakdown of the directories where binaries and applications can be ins
 - **Best Practice**: Do not place manual binaries here. Use `/usr/local/bin` instead.
 
 > **Example binaries**:
+>
 > - `/sbin/fsck` (file system check)
 > - `/sbin/lvm` (logical volume manager)
 {: .prompt-info }
@@ -76,9 +78,11 @@ Here's a breakdown of the directories where binaries and applications can be ins
 - **Best Practice**: Use `/usr/local/bin` for system-wide, manually installed binaries that are available to all users.
 
 > **Example**:
+>
 > ```bash
 > sudo cp myprogram /usr/local/bin/
 > ```
+>
 {: .prompt-info }
 
 > - **Libraries** for these binaries should go into `/usr/local/lib`.
@@ -93,20 +97,24 @@ Here's a breakdown of the directories where binaries and applications can be ins
   - Introduced by the **FHS** to provide a clean location for large software packages that do not conform to the `/usr` structure.
   - Typically used for proprietary or precompiled software.
 - **Structure**: Each application gets its own subdirectory:
-  ```
+
+  ```shell
   /opt/<appname>/
       bin/   # Binaries
       lib/   # Libraries
       share/ # Shared data
   ```
+
 - **Best Practice**: Use `/opt` for large, self-contained applications (e.g., Prometheus, Apache Spark).
 
 > **Example**:
+>
 > ```bash
 > sudo mkdir -p /opt/myapp/bin
 > sudo cp myapp /opt/myapp/bin/
 > sudo ln -s /opt/myapp/bin/myapp /usr/local/bin/myapp
 > ```
+>
 {: .prompt-info }
 
 > By creating a symbolic link in `/usr/local/bin`, you make the program executable without changing your `PATH`.
@@ -122,10 +130,12 @@ Here's a breakdown of the directories where binaries and applications can be ins
 - **Best Practice**: Use `~/.local/bin` for binaries you install just for your user account.
 
 > **Example**:
+>
 > ```bash
 > mkdir -p ~/.local/bin
 > cp myprogram ~/.local/bin/
 > ```
+>
 {: .prompt-info }
 
 > If needed add the `PATH` modification to your shell configuration (e.g., `~/.bashrc`) to make it permanent.
@@ -156,13 +166,17 @@ Binaries often require libraries (shared or static) to function. Here are the co
 3. **/opt/<appname>/lib**: Self-contained libraries for software in `/opt`.
 
 > To ensure the system can locate custom libraries, you may need to update the **dynamic > linker** with:
+>
 > ```bash
 > sudo ldconfig
 > ```
+>
 > Or set the `LD_LIBRARY_PATH` environment variable:
+>
 > ```bash
 > export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 > ```
+>
 {: .prompt-warning }
 
 ---
@@ -185,7 +199,7 @@ The Linux filesystem may seem complex at first, but its organization is rooted i
 
 Keep your distro clean 🐧.
 
-
 ## References
+
 [^pdp-11]: <https://en.wikipedia.org/wiki/PDP-11>
 [^rk05]: <https://en.wikipedia.org/wiki/RK05>
