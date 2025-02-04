@@ -8,6 +8,8 @@ on:
       - .gitignore
       - README.md
       - LICENSE
+      - .github/*
+      - _drafts/*
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
