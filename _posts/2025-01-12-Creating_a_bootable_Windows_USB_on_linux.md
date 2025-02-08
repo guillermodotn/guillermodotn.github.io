@@ -1,6 +1,6 @@
 ---
 title: Creating a Bootable Windows USB on Linux
-date: 2024-12-18 09:00:00 +0100
+date: 2025-01-12 09:00:00 +0100
 published: true
 categories: [Post, Linux]
 tags: [linux, file-system, sys-admin, hybrid-iso, command-line, windows, bootable-USB]     # TAG names should always be lowercase
