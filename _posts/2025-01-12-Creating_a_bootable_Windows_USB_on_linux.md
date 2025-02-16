@@ -36,6 +36,7 @@ You can determine whether an ISO is a hybrid using the following methods:
    ```bash
       file path/to/image.iso
    ```
+   {: .nolineno }
 
    For a hybrid ISO, the output will typically mention the presence of "(DOS/MBR boot sector)".
 
@@ -46,6 +47,7 @@ You can determine whether an ISO is a hybrid using the following methods:
    ```bash
       fdisk -l path/to/image.iso
    ```
+   {: .nolineno }
 
       If you see partition information (e.g., a single bootable partition), the ISO is likely hybrid.
       A non-hybrid ISO will not show partition details.
@@ -57,6 +59,7 @@ You can determine whether an ISO is a hybrid using the following methods:
    ```bash
       xorriso -indev path/to/image.iso
    ```
+   {: .nolineno }
 
    The output will indicate if the ISO contains a boot loader and a partition table under the `Boot record` entry.
 
@@ -77,6 +80,7 @@ Insert your USB drive and open the terminal. Use the `lsblk` command to identify
 ```bash
 lsblk
 ```
+{: .nolineno }
 
 In the output, locate your USB drive, usually named something like `/dev/sdX`, where `X` represents the drive letter. Be cautious to note the correct device.
 
@@ -91,6 +95,7 @@ Before formatting, create the necessary partitions on the USB drive. Use the `fd
 > ```bash
 > sudo umount /dev/sdX*
 > ```
+> {: .nolineno }
 >
 > Replace `/dev/sdX*` with the appropriate partition(s) from your USB drive.
 {: .prompt-tip }
@@ -100,6 +105,7 @@ Before formatting, create the necessary partitions on the USB drive. Use the `fd
    ```bash
    sudo fdisk /dev/sdX
    ```
+   {: .nolineno }
 
 2. Inside the `fdisk` prompt, create a new partition table:
    - Press `g` to create a new `GPT` partition table.
@@ -132,12 +138,14 @@ Use NTFS for the data partition and FAT32 for the boot partition:
 ```bash
    sudo mkfs.ntfs -f /dev/sdX1
 ```
+{: .nolineno }
 
 **For FAT32:**
 
 ```bash
    sudo mkfs.vfat -F 32 /dev/sdX1
 ```
+{: .nolineno }
 
 Replace `/dev/sdX1` with the correct partition created in the previous step.
 
@@ -155,6 +163,7 @@ Mount the ISO File and the drive data partition and copy the contents of the ISO
       sudo mkdir /mnt/iso
       sudo mkdir /mnt/drive
    ```
+   {: .nolineno }
 
 2. Mount the ISO:
 
@@ -162,6 +171,7 @@ Mount the ISO File and the drive data partition and copy the contents of the ISO
       sudo mount -o loop /path/to/your.iso /mnt/iso
       sudo mount /dev/sdX1 /mnt/drive
    ```
+   {: .nolineno }
 
    Replace `/path/to/your.iso` with the actual path to your ISO file, and `/dev/sdX1` with the correct partition created in the previous step.
 
@@ -172,6 +182,7 @@ Mount the ISO File and the drive data partition and copy the contents of the ISO
    ```bash
       sudo cp -r /mnt/iso/* /path/to/destination/folder
    ```
+   {: .nolineno }
 
    Replace `/path/to/destination/folder` with your target directory, in this case `/mnt/drive`.
 
@@ -185,13 +196,14 @@ Mount the ISO File and the drive data partition and copy the contents of the ISO
    ```bash
       sudo umount /mnt/iso
    ```
+   {: .nolineno }
 
 >Remove the mount point if no longer needed:
 >
 > ```bash
 >    sudo rmdir /mnt/iso
 >   ```
->
+> {: .nolineno }
 {: .prompt-info }
 
 ---
@@ -203,12 +215,14 @@ For it first of all we will need to download the image from the Rufus[^Rufus] re
 ```bash
 wget https://github.com/pbatard/rufus/raw/master/res/uefi/uefi-ntfs.img
 ```
+{: .nolineno }
 
 Use the powerful `dd` command to write the Windows ISO directly to the USB drive:
 
 ```bash
 sudo dd if=/path/to/windows.iso of=/dev/sdX bs=1M status=progress
 ```
+{: .nolineno }
 
 - Replace `/path/to/windows.iso` with the actual path to your Windows ISO file.
 - Replace `/dev/sdX` with your USB device name.
@@ -225,6 +239,7 @@ Use `gub2-install` to install boot
 ```bash
 sudo grub2-install --target=i386-pc --boot-directory=/path/to/windows_part --force /dev/sdX
 ```
+{: .nolineno }
 
 - Replace `/path/to/windows_part` with the actual path to your USB Windows data partition mount point.
 - Replace `/dev/sdX` with your USB device name.
@@ -249,6 +264,7 @@ Plug the USB drive into your target system and boot from it. You may need to adj
   ```bash
   sha256sum /path/to/windows.iso
   ```
+  {: .nolineno }
 
   Compare the result with the official checksum.
 
