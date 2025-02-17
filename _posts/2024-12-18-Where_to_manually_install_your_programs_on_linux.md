@@ -82,7 +82,6 @@ Here's a breakdown of the directories where binaries and applications can be ins
 > ```bash
 > sudo cp myprogram /usr/local/bin/
 > ```
->
 {: .prompt-info }
 
 > - **Libraries** for these binaries should go into `/usr/local/lib`.
@@ -114,7 +113,6 @@ Here's a breakdown of the directories where binaries and applications can be ins
 > sudo cp myapp /opt/myapp/bin/
 > sudo ln -s /opt/myapp/bin/myapp /usr/local/bin/myapp
 > ```
->
 {: .prompt-info }
 
 > By creating a symbolic link in `/usr/local/bin`, you make the program executable without changing your `PATH`.
@@ -135,7 +133,6 @@ Here's a breakdown of the directories where binaries and applications can be ins
 > mkdir -p ~/.local/bin
 > cp myprogram ~/.local/bin/
 > ```
->
 {: .prompt-info }
 
 > If needed add the `PATH` modification to your shell configuration (e.g., `~/.bashrc`) to make it permanent.
@@ -176,7 +173,6 @@ Binaries often require libraries (shared or static) to function. Here are the co
 > ```bash
 > export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 > ```
->
 {: .prompt-warning }
 
 ---

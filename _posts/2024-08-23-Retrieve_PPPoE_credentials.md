@@ -41,7 +41,6 @@ A good trick is to list the network interfaces with the Ethernet cable disconnec
 ```shell
 >  netsh interface show interface
 ```
-
 {: .nolineno }
 
 This will show an output similar to:
@@ -52,7 +51,6 @@ Admin State    State          Type             Interface Name
 Enabled        Connected      Dedicated        WiFi
 Enabled        Disconnected   Dedicated        Ethernet
 ```
-
 {: .nolineno }
 
 We need to check for the change in the `State`column and remember the `Interface Name`.
@@ -62,7 +60,6 @@ We need to check for the change in the `State`column and remember the `Interface
 ```bash
 ipconfig
 ```
-
 {: .nolineno }
 
 #### On Linux
@@ -72,7 +69,6 @@ Here, you can use the same command as on a Mac, or the more recommended one.
 ```bash
 nmcli device status
 ```
-
 {: .nolineno }
 
 This command will show an output as follows:
@@ -117,7 +113,6 @@ If you can't find your VLAN, you can use the -r option in the script with the nu
 ```shell
 > pppoe-retriever-windows-latest.exe -i <interface> -l <vland_id>
 ```
-
 {: .nolineno }
 
 #### Unknown VLAN (Windows)
@@ -125,7 +120,6 @@ If you can't find your VLAN, you can use the -r option in the script with the nu
 ```shell
 > pppoe-retriever-windows-latest.exe -i <interface> -r <range>
 ```
-
 {: .nolineno }
 
 ### UNIX
@@ -136,7 +130,6 @@ If you can't find your VLAN, you can use the -r option in the script with the nu
 chmod +x pppoe-retriever-unix-latest
 sudo ./pppoe-retriever-unix-latest -i <interface> -l <vland_id>
 ```
-
 {: .nolineno }
 
 #### Unknown VLAN (UNIX)
@@ -145,7 +138,6 @@ sudo ./pppoe-retriever-unix-latest -i <interface> -l <vland_id>
 chmod +x pppoe-retriever-unix-latest
 sudo ./pppoe-retriever-unix-latest -i <interface> -r <range>
 ```
-
 {: .nolineno }
 
 > On unix systems the program should be run with `root` privileges.

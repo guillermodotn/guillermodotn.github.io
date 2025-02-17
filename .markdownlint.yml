@@ -17,7 +17,7 @@ MD003:  # Heading style
   style: "atx"  # Use # for headings instead of underlined style
 MD010: true  # No hard tabs
 MD022: true  # Headers should be surrounded by blank lines
-MD031: true  # Code blocks should be surrounded by blank lines
+MD031: false  # Code blocks should be surrounded by blank lines
 MD040: true  # Fenced code blocks should have a language specified
 MD046: true  # Code block style consistency
 
