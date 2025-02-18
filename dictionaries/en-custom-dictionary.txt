@@ -1,3 +1,16 @@
+RAR
+rar
+unrar
+unRAR
+rarlab
+RARLab
+RARLab's
+WinRAR
+Roshal
+gz
+LGPL
+natively
+
 bootable
 Bootloader
 UEFI
