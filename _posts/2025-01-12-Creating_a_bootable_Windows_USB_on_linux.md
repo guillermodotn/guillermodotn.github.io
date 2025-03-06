@@ -221,12 +221,12 @@ wget https://github.com/pbatard/rufus/raw/master/res/uefi/uefi-ntfs.img
 Use the powerful `dd` command to write the Windows ISO directly to the USB drive:
 
 ```bash
-sudo dd if=/path/to/windows.iso of=/dev/sdX bs=1M status=progress
+sudo dd if=/path/to/uefi-ntfs.img of=/dev/sdX2 bs=1M status=progress
 ```
 {: .nolineno }
 
-- Replace `/path/to/windows.iso` with the actual path to your Windows ISO file.
-- Replace `/dev/sdX` with your USB device name.
+- Replace `/path/to/uefi-ntfs.img` with the actual path to your uefi-ntfs.img file.
+- Replace `/dev/sdX2` with your partition name.
 
 > Double-check the device name to avoid overwriting important drives.
 {: .prompt-warning }
