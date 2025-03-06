@@ -38,6 +38,9 @@ sys
 el
 indev
 torito
+img
+ntfs
+uefi
 
 usr
 XDG
