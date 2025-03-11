@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://guillermodotn.github.io/sitemap.xml
