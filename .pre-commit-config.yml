@@ -1,0 +1,10 @@
+repos:
+  - repo: local
+    hooks:
+      - id: pyspelling
+        name: Spell Check with Pyspelling
+        entry: pyspelling
+        args: [-c, .pyspelling.yml]
+        language: system
+        verbose: true
+        pass_filenames: false
