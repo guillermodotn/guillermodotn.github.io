@@ -1,10 +1,9 @@
 repos:
-  - repo: local
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.44.0
+    hooks:
+    - id: markdownlint
+  - repo: https://github.com/facelessuser/pyspelling
+    rev: master
     hooks:
       - id: pyspelling
-        name: Spell Check with Pyspelling
-        entry: pyspelling
-        args: [-c, .pyspelling.yml]
-        language: system
-        verbose: true
-        pass_filenames: false
