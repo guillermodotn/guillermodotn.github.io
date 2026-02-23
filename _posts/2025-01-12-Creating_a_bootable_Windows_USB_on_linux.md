@@ -111,8 +111,8 @@ Before formatting, create the necessary partitions on the USB drive. Use the `fd
 2. Inside the `fdisk` prompt, create a new partition table:
    - Press `g` to create a new `GPT` partition table.
    - Press `n` to create a new partition.
-   - Choose `p` for a primary partition.
-   - Create the first partition only leaving some spare room for the boot partition. Around a Meg should be enough.
+   - Accept defaults for partition number and first sector.
+   - For the last sector, leave some spare room for the boot partition. Around +1M should be enough.
    - Repeat the steps for the second partition taking the remaining space.
 
    > In Windows environments, especially when dealing with USB drives, the operating system typically recognizes only the first partition on removable drives. This means that if your USB drive is configured with multiple partitions, Windows will usually mount and assign a drive letter only to the first primary partition. Consequently, to ensure that the data partition is accessible in Windows, it should be the first partition on the USB drive. The boot partition, containing system or boot files, should be placed as the second partition.
@@ -124,6 +124,7 @@ Before formatting, create the necessary partitions on the USB drive. Use the `fd
 4. Set the bootable flag for the partition:
    - Press `x` for extra functionality.
    - Press `A` and select the **bootable** partition.
+   - Press `r` to return to the main menu.
 
 5. Write the changes and exit:
    - Press `w` to write the changes and exit `fdisk`.
@@ -181,11 +182,9 @@ Mount the ISO File and the drive data partition and copy the contents of the ISO
    Use the `cp` command to copy files:
 
    ```bash
-      sudo cp -r /mnt/iso/* /path/to/destination/folder
+      sudo cp -r /mnt/iso/* /mnt/drive
    ```
    {: .nolineno }
-
-   Replace `/path/to/destination/folder` with your target directory, in this case `/mnt/drive`.
 
    > This can take a while, around 10 min depending of your USB speeds.
    {: .prompt-info }
@@ -235,14 +234,25 @@ sudo dd if=/path/to/uefi-ntfs.img of=/dev/sdX2 bs=1M status=progress
 
 ## Step 6: Install boot loader
 
-Use `gub2-install` to install boot
+> On Ubuntu 24.04 and later, you may need to install the `grub-pc` package first to use the `i386-pc` target:
+>
+> ```bash
+> sudo apt install grub-pc
+> ```
+> {: .nolineno }
+{: .prompt-tip }
+
+Use `grub-install` (Debian/Ubuntu) or `grub2-install` (RHEL/CentOS) to install boot:
 
 ```bash
-sudo grub2-install --target=i386-pc --boot-directory=/path/to/windows_part --force /dev/sdX
+# Debian/Ubuntu
+sudo grub-install --target=i386-pc --boot-directory=/mnt/drive --force /dev/sdX
+
+# RHEL/CentOS/Fedora
+sudo grub2-install --target=i386-pc --boot-directory=/mnt/drive --force /dev/sdX
 ```
 {: .nolineno }
 
-- Replace `/path/to/windows_part` with the actual path to your USB Windows data partition mount point.
 - Replace `/dev/sdX` with your USB device name.
 
 > Double-check the device name to avoid overwriting important drives.
