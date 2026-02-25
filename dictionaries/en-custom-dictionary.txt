@@ -76,3 +76,11 @@ https
 repo
 
 unmount
+CentOS
+RHEL
+dev
+mnt
+pc
+sdX
+sudo
+
