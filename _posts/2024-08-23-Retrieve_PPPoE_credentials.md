@@ -1,8 +1,8 @@
 ---
 title: Retrieve PPPoE Credentials from a ISP-Locked Router.
 date: 2024-08-23 11:00:00 +0100
-categories: [Tutorial, Network]
-tags: [network, pppoe, tutorial]     # TAG names should always be lowercase
+categories: [Network, ISP]
+tags: [network, pppoe, linux, windows, mac, router, command-line]     # TAG names should always be lowercase
 ---
 
 This post is a tutorial on how to retrieve the credentials from ISP (Internet Service Provider) locked-down routers. As you may know, some ISPs provide you with a router when you sign a contract with them. This router usually comes at no extra cost (included in the price). However, while this may seem convenient at first, you might encounter issues later on when trying to configure certain parameters within the router or due to its limited capabilities.

@@ -1,8 +1,8 @@
 ---
 title: How to Extract Multi-Part RAR Files on Linux.
 date: 2024-02-18 20:00:00 +0100
-categories: [How-To, Archive, RAR] # Posts, Tutorials, Guides, How-To Articles, Opinion Pieces, News & Updates, Comparisons, Reviews, Case Studies, Cheat Sheets & Reference Guides
-tags: [linux, rar, compression, 7zip, archive] # TAG names should always be lowercase
+categories: [Linux, Archive]
+tags: [linux, rar, compression, 7zip, archive, command-line] # TAG names should always be lowercase
 ---
   
 Extracting multi-part RAR files on Linux can be a frustrating task, primarily because RAR is a proprietary format that is not natively supported by many Linux distributions. This often results in compatibility issues, especially when using open-source alternatives like `unrar-free`[^unrar-free], which struggles to properly handle multi-part archives.

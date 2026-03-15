@@ -1,8 +1,8 @@
 ---
 title: Where to manually install your programs on Linux.
 date: 2024-12-18 09:00:00 +0100
-categories: [Post, Linux, System Administration, File System Management, Best Practices]
-tags: [linux, file-system, sys-admin, binary-files, manual-installation, filesystem-hierarchy-standard, xdg-specification, software-management, best-practices, directories] # TAG names should always be lowercase
+categories: [Linux, System Administration]
+tags: [linux, file-system, sys-admin, best-practices] # TAG names should always be lowercase
 ---
   
 
