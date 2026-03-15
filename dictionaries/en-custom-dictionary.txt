@@ -41,6 +41,7 @@ torito
 img
 ntfs
 uefi
+usb
 
 usr
 XDG

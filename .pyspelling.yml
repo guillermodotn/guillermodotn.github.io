@@ -16,5 +16,6 @@ matrix:
       ignores:
       - :matches(code, pre)
   sources:
-  - '**/*.md'
+  - '_posts/**/*.md'
+  - '_tabs/**/*.md'
   default_encoding: utf-8
