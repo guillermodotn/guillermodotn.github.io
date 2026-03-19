@@ -37,7 +37,7 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: markdownlint-cli
-      uses: nosborn/github-action-markdown-cli@v3.4.0
+      uses: nosborn/github-action-markdown-cli@v3.5.0
       with:
         files: .
 
