@@ -6,3 +6,8 @@ updates:
       interval: "monthly" # Check frequency
     ignore:
       - dependency-name: "jekyll" # Optional: Avoid unrelated Jekyll updates
+
+  - package-ecosystem: "github-actions" # GitHub Actions workflows
+    directory: "/"
+    schedule:
+      interval: "monthly"
