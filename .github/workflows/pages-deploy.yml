@@ -30,7 +30,7 @@ jobs:
     steps:
     - uses: actions/checkout@v6
     - name: Check Spelling
-      uses: rojopolis/spellcheck-github-actions@0.46.0
+      uses: rojopolis/spellcheck-github-actions@0.60.0
 
   markdownlint:
     runs-on: ubuntu-latest
