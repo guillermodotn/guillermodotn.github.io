@@ -10,3 +10,4 @@ Podman
 Kubernetes
 Agentic
 Siestas
+geospatial
